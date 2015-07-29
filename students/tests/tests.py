@@ -6,14 +6,12 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 
-from codeon import settings
 from students.models import Group, Student
 
 
 class ModelsTestCase(TestCase):
     def setUp(self):
         User.objects.create_user('test', 'test@gmail.com', 'test')
-        self.test_row_id = 1
 
     def test_create_student_without_login(self):
         """
