@@ -4,14 +4,12 @@
 {% load thumbnail %}
 
 {% block content %}
-    <a href="{% if user.is_authenticated %}
-                {% url 'student_create' %}
-             {% else %}
-                {% url 'login' %}
-             {% endif %}">
+    {% if user.is_authenticated %}
+    <a href="{% url 'student_create' %}">
         <button class="btn btn-success">Add Student</button>
     </a>
     <div class="clear" style="height: 20px;"></div>
+    {% endif %}
     <table class="table table-bordered">
         <thead>
         <tr>
