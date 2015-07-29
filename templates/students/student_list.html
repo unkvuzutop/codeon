@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load admin_tags %}
+{% load thumbnail %}
+
+{% block content %}
+    <a href="{% if user.is_authenticated %}
+                {% url 'student_create' %}
+             {% else %}
+                {% url 'login' %}
+             {% endif %}">
+        <button class="btn btn-success">Add Student</button>
+    </a>
+    <div class="clear" style="height: 20px;"></div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Photo</td>
+            <td>Birth date</td>
+            <td>Student ticket</td>
+            {% if user.is_authenticated %}
+                <td>Actions</td>
+                <td>Admin panel actions</td>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+            {% for student in student_list %}
+                <tr>
+                    <td>
+                        {{ student.full_name }}
+                    </td>
+                    <td>
+                        {% thumbnail student.photo "100x100" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                    </td>
+                    <td>{{ student.birth_date|date:"d M Y" }}</td>
+                    <td>{{ student.student_ticket_number }}</td>
+                    {% if user.is_authenticated %}
+                        <td>
+                            <a href="{% url 'student_edit' student.id %}">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </a>
+                            <a href="{% url 'student_delete' student.id %}">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                        <td>
+                            {% admin_url student %}
+                        </td>
+                    {% endif %}
+                </tr>
+            {% empty %}
+                <td></td>
+                <td>No articles yet.</td>
+                <td></td>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include "students/includes/paginator.html" %}
+{% endblock %}

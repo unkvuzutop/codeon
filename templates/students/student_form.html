@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+
+{% block content %}
+   <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <table>
+            <tbody>
+            <tr class="form-row">
+                <td>
+                    {% if form.full_name.errors %}
+                        {% for error in form.full_name.errors %}
+                            <p class="error"> {{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    <label class="col-sm-12 control-label">{{ form.full_name.label }}</label>
+                </td>
+                <td>
+                    {{ form.full_name }}
+                </td>
+            </tr>
+            <tr class="form-row">
+                <td>
+
+                    {% if form.photo.errors %}
+                        {% for error in form.photo.errors %}
+                            <p class="error"> {{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                     <label class="col-sm-12 control-label">{{ form.photo.label }}</label>
+                </td>
+                <td>
+                    {{ form.photo }}
+                </td>
+            </tr>
+            <tr class="form-row">
+                <td>
+                    {% if form.birth_date.errors %}
+                        {% for error in form.birth_date.errors %}
+                            <p class="error"> {{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    <label class="col-sm-12 control-label">{{ form.birth_date.label }}</label>
+                </td>
+                <td>
+                    {{ form.birth_date }}
+                </td>
+            </tr>
+            <tr class="form-row">
+                <td class="form-row">
+                    {% if form.student_ticket_number.errors %}
+                        {% for error in form.student_ticket_number.errors %}
+                            <p class="error"> {{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    <label class="col-sm-12 control-label">{{ form.student_ticket_number.label }}</label>
+                </td>
+                <td>
+                    {{ form.student_ticket_number }}
+                </td>
+            </tr>
+            <tr class="form-row">
+                <td>
+                    {% if form.group.errors %}
+                        {% for error in form.group.errors %}
+                            <p class="error"> {{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    <label class="col-sm-12 control-label">{{ form.group.label }}</label>
+                </td>
+                <td>
+                    {{ form.group }}
+                </td>
+            </tr>
+            <tr class="form-row">
+                <td></td>
+                <td>
+                    <input id="submit" name="submit" type="submit" value="Submin" class="btn btn-primary">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+{% endblock %}
