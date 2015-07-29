@@ -7,4 +7,5 @@
 
 
 3) использование django-command  для  получания списка групп и их студентов
+
 python manage.py datalist students   
