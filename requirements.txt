@@ -1,0 +1,4 @@
+Django==1.8.1
+Pillow==2.9.0
+sorl-thumbnail==12.3
+wsgiref==0.1.2
