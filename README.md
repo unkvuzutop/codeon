@@ -12,8 +12,7 @@ manage.py datalist students
 
 
 пример страницы залогиненого пользователя
-https://www.dropbox.com/s/gxydyvgatk7r1wc/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202015-07-30%2000.41.05.png?dl=0
-
+https://www.dropbox.com/s/8hylj7h5ap6j350/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202015-07-30%2000.43.53.png?dl=0
 
 пример страницы не залогиненного пользователя
-https://www.dropbox.com/s/b87cyrrzpg7e2lc/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202015-07-30%2000.39.32.png?dl=0
+https://www.dropbox.com/s/1t5mtmp2398fima/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202015-07-30%2000.44.40.png?dl=0
